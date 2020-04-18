@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class="center">
+<h2>Thêm thông tin trường mới</h2></div>
+<form [formGroup]="schoolForm">
+  <div class="container">
+
+  <div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">Schoolname</span>
+  </div>
+  <input type="text" class="form-control" formControlName="name" placeholder="Mời bạn nhập tên trường" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<p>
+  <div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">Image</span>
+  </div>
+  <input type="text" class="form-control" formControlName="logo" placeholder="Mời bạn nhập link" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<p>
+ <div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">Address</span>
+  </div>
+  <input type="text" class="form-control" formControlName="address" placeholder="Mời bạn nhập địa chỉ" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<p>
+  <div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">Hiệu trưởng</span>
+  </div>
+  <input type="text" class="form-control" formControlName="president" placeholder="Mời bạn nhập tên " aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<p>
+  <div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">State</span>
+  </div>
+  <input type="text" class="form-control" formControlName="province" placeholder="Mời bạn nhập bang" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+<p>
+  <br>
+  <button class="btn btn-success" (click)="save()">Save & Update</button>
+  <button class="btn btn-danger" (click)="delete()">Delete</button>
+  </div>
+</form>

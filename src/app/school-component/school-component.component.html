@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="container">
+  <p></p><hr>
+  <a [routerLink]="['addSchool']" class="btn btn-success">Thêm</a><p></p>
+  <div class="row row-cols-4">
+   
+<div *ngFor="let school of school " class="card" style="width: 18rem;">
+  <img [src]="school.logo" class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 class="card-title">Trường {{school.name}}</h5>
+    <p class="card-text">Địa chỉ: {{school.address}}</p>
+    <p class="card-text">Hiệu trưởng: {{school.president}}</p>
+    <p class="card-text">Bang: {{school.province}}</p>
+    <a [routerLink]="['schooldetails',school.id]" class="btn btn-primary">Chi tiết</a>
+    <td><button type="button"  [routerLink]="['edit-school', school.id]" class="btn btn-danger">Edit</button></td>
+
+   
+  </div>
+</div>
+
