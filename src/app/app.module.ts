@@ -1,22 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
-import { SchoolfileComponentComponent } from './schoolfile-component/schoolfile-component.component';
-import { SchooldetailsComponentComponent } from './schooldetails-component/schooldetails-component.component';
+import { componentFactoryName } from '@angular/compiler';
 import { SchoolComponentComponent } from './school-component/school-component.component';
-import { ClassComponent } from './class/class.component';
-import { ClassserviceService } from './classservice.service';
-import { SchoolserviceService } from './schoolservice.service';
-import { ClassService } from './class.service';
 import { SchoolService } from './school.service';
+import { SchooldetailsComponent } from './schooldetails-component/schooldetails.component';
+import { SchoolfileComponentComponent } from './schoolfile-component/schoolfile-component.component';
+
+import { ClassService } from './class.service';
+import { ClassComponent } from './class/class.component';
+
+
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, SchoolfileComponentComponent, SchooldetailsComponentComponent, SchoolComponentComponent, ClassComponent ],
+  imports: [
+    BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,
+    RouterModule.forRoot([
+       {path: '', component: SchoolComponentComponent},
+       {path: 'schooldetails/:id', component: SchooldetailsComponent},
+       {path: 'addSchool', component: SchoolfileComponentComponent},
+       {path: 'edit-school/:id', component: SchoolfileComponentComponent},
+       {path: 'schooldetails/:id/addClass/:schoolId', component: ClassComponent}
+
+    ])
+    ],
+  declarations: [ AppComponent, HelloComponent, SchoolComponentComponent,SchooldetailsComponent, SchoolfileComponentComponent, ClassComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ClassserviceService, SchoolserviceService, ClassService, SchoolService]
+  providers: [SchoolService, ClassService]
 })
+
 export class AppModule { }
