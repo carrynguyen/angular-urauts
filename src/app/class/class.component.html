@@ -1,0 +1,15 @@
+ <h3>Thêm lớp học</h3><br>
+    <form [formGroup]="classForm">
+    <label>Name</label><br>
+    <input type="text" formControlName="name"/><br>
+    <label>Room_number</label><br>
+    <input type="text" formControlName="room_number"/><br>
+    <label>Total_student</label><br>
+    <input type="text" formControlName="total_student"/><br>
+    <label>SchoolID</label><br>
+    <input type="text" formControlName="schoolId"/><br>
+    <label>Main Teacher</label><br>
+    <input type="text" formControlName="main_teacher"/><br>
+    </form>
+    <p></p>
+  <button (click)="save()" class="btn btn-success">Thêm</button><p></p>
