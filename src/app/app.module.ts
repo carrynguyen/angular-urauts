@@ -22,7 +22,7 @@ import { ClassComponent } from './class/class.component';
     BrowserModule, FormsModule,HttpClientModule,ReactiveFormsModule,
     RouterModule.forRoot([
        {path: '', component: SchoolComponentComponent},
-       {path: 'schooldetails/:id', component: SchooldetailsComponent},
+       {path: 'hotelsdetails/:id', component: SchooldetailsComponent},
        {path: 'addSchool', component: SchoolfileComponentComponent},
        {path: 'edit-school/:id', component: SchoolfileComponentComponent},
        {path: 'schooldetails/:id/addClass/:schoolId', component: ClassComponent}

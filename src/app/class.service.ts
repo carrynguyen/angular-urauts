@@ -8,8 +8,8 @@ export class ClassService {
 
   constructor(private http:HttpClient) {}
 
-    getClassesByhotelsId(hotelId): Observable<any>{
-    let url = `${apiURL}/${hotelId}/classes`;
+    getClassesByhotelsId(hotelsId): Observable<any>{
+    let url = `${apiURL}/${hotelsId}/classes`;
     return this.http.get<any>(url);
   }
    getClassesById(hotelsId, classesId): Observable<any>{
